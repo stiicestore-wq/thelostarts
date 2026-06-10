@@ -15,7 +15,10 @@ export function IndexSection() {
             <p className="text-xs uppercase tracking-widest text-primary/60 mb-8">The Index</p>
             <div className="w-8 h-[1px] bg-primary/40 mb-10" />
             <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
-              The Lost Arts Index is an ongoing archive documenting human abilities that appear to be declining in the digital age.
+              The Human Archive is maintained by STIICE.
+            </p>
+            <p className="text-muted-foreground font-light leading-relaxed mb-6">
+              An ongoing effort to document human abilities that appear to be declining in the digital age.
             </p>
             <p className="text-muted-foreground font-light leading-relaxed">
               Some are vulnerable.<br />
