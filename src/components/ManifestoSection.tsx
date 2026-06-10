@@ -75,7 +75,7 @@ export function ManifestoSection() {
               But in solving them, we may have forgotten something important.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed font-light">
-              The Lost Arts exists to document, preserve, and rediscover the human abilities that once felt natural — before attention became a product.
+              STIICE exists to document, preserve, and rediscover the human abilities that once felt natural — before attention became a product.
             </p>
           </motion.div>
         </div>
