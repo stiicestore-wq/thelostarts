@@ -7,10 +7,8 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const receives = [
   "New archive entries",
-  "Research and observations",
-  "Reflections on attention, boredom, solitude, reading, conversation, and presence",
-  "Early access to The Human Archive",
-  "First access to future physical releases",
+  "Reflections and research",
+  "Early access to physical editions",
 ];
 
 export function WaitlistSection() {
@@ -82,24 +80,24 @@ export function WaitlistSection() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex-1 mb-16 md:mb-0"
           >
-            <p className="text-xs uppercase tracking-widest text-primary/60 mb-8">Join the Archive</p>
+            <p className="text-xs uppercase tracking-widest text-primary/60 mb-8">Join The Circle</p>
             <div className="w-8 h-[1px] bg-primary/40 mb-10" />
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
-              Join The Archive
+              Join The Circle
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-12 text-base md:text-lg max-w-sm">
-              Join STIICE and receive early access to new archive entries, research, observations, and future releases.
+              A quiet space for archive entries, reflections, research, and early access to future releases.
             </p>
 
-            <p className="text-xs uppercase tracking-widest text-primary/50 mb-6">You'll receive</p>
-            <ul className="space-y-4">
+            <p className="text-xs uppercase tracking-widest text-primary/50 mb-6">Inside, you'll receive</p>
+            <ul className="space-y-4 mb-12">
               {receives.map((item, i) => (
                 <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: i * 0.08 }}
+                  transition={{ duration: 0.7, delay: i * 0.1 }}
                   className="flex items-start gap-3 text-sm text-muted-foreground font-light leading-relaxed"
                   data-testid={`receive-item-${i}`}
                 >
@@ -109,9 +107,9 @@ export function WaitlistSection() {
               ))}
             </ul>
 
-            <div className="mt-10 pt-10 border-t border-primary/10">
-              <p className="text-sm text-muted-foreground/60 font-light">No spam. No noise.</p>
-              <p className="text-sm text-muted-foreground/60 font-light">One thoughtful email at a time.</p>
+            <div className="pt-8 border-t border-primary/10 space-y-1">
+              <p className="text-sm text-muted-foreground/50 font-light">No noise.</p>
+              <p className="text-sm text-muted-foreground/50 font-light">One thoughtful email at a time.</p>
             </div>
           </motion.div>
 
@@ -122,76 +120,74 @@ export function WaitlistSection() {
             transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="flex-1 w-full"
           >
-            <div className="min-h-[280px] flex items-start">
-              <AnimatePresence mode="wait">
-                {!isSubmitted ? (
-                  <motion.form
-                    key="form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    onSubmit={onSubmit}
-                    className="w-full space-y-6"
-                  >
-                    <div className="flex flex-col">
-                      <label className="sr-only" htmlFor="waitlist-name">First name</label>
-                      <input
-                        id="waitlist-name"
-                        name="name"
-                        placeholder="First Name (Optional)"
-                        autoComplete="given-name"
-                        className="bg-transparent border-b border-card-border py-4 px-2 text-foreground focus:outline-none focus:border-primary transition-colors duration-300 font-light placeholder:text-muted-foreground/40 text-base"
-                        data-testid="input-waitlist-name"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <label className="sr-only" htmlFor="waitlist-email">Email address</label>
-                      <input
-                        id="waitlist-email"
-                        name="email"
-                        type="email"
-                        placeholder="Email Address *"
-                        autoComplete="email"
-                        required
-                        className="bg-transparent border-b border-card-border py-4 px-2 text-foreground focus:outline-none focus:border-primary transition-colors duration-300 font-light placeholder:text-muted-foreground/40 text-base"
-                        data-testid="input-waitlist-email"
-                      />
-                    </div>
+            <AnimatePresence mode="wait">
+              {!isSubmitted ? (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  onSubmit={onSubmit}
+                  className="w-full space-y-6"
+                >
+                  <div className="flex flex-col">
+                    <label className="sr-only" htmlFor="waitlist-name">First name</label>
+                    <input
+                      id="waitlist-name"
+                      name="name"
+                      placeholder="First Name (Optional)"
+                      autoComplete="given-name"
+                      className="bg-transparent border-b border-card-border py-4 px-2 text-foreground focus:outline-none focus:border-primary transition-colors duration-300 font-light placeholder:text-muted-foreground/40 text-base"
+                      data-testid="input-waitlist-name"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="sr-only" htmlFor="waitlist-email">Email address</label>
+                    <input
+                      id="waitlist-email"
+                      name="email"
+                      type="email"
+                      placeholder="Email Address *"
+                      autoComplete="email"
+                      required
+                      className="bg-transparent border-b border-card-border py-4 px-2 text-foreground focus:outline-none focus:border-primary transition-colors duration-300 font-light placeholder:text-muted-foreground/40 text-base"
+                      data-testid="input-waitlist-email"
+                    />
+                  </div>
 
-                    {error && <p className="text-destructive text-sm font-light">{error}</p>}
+                  {error && <p className="text-destructive text-sm font-light">{error}</p>}
 
-                    <div className="pt-4 space-y-4">
-                      <button
-                        type="submit"
-                        disabled={status === "submitting"}
-                        className="w-full px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 uppercase tracking-widest text-sm disabled:opacity-50"
-                        data-testid="button-join-archive"
-                      >
-                        {status === "submitting" ? "Joining..." : "Join The Archive"}
-                      </button>
-                      <p className="text-center text-xs text-muted-foreground/40 font-light tracking-wide">
-                        For people who feel that something human is being forgotten.
-                      </p>
-                    </div>
-                  </motion.form>
-                ) : (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="w-full border border-primary/20 p-12 bg-card/30"
-                  >
-                    <p className="text-xs uppercase tracking-widest text-primary/60 mb-6">Access Requested</p>
-                    <h3 className="font-serif text-2xl text-foreground mb-4">Your name has been received.</h3>
-                    <p className="text-muted-foreground font-light leading-relaxed">
-                      We will reach out when the archive opens.
+                  <div className="pt-4 space-y-4">
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="w-full px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 uppercase tracking-widest text-sm disabled:opacity-50"
+                      data-testid="button-join-circle"
+                    >
+                      {status === "submitting" ? "Joining..." : "Join The Circle"}
+                    </button>
+                    <p className="text-center text-xs text-muted-foreground/40 font-light tracking-wide">
+                      No pressure. Leave whenever you want.
                     </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                  </div>
+                </motion.form>
+              ) : (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="w-full border border-primary/20 p-12 bg-card/30"
+                >
+                  <p className="text-xs uppercase tracking-widest text-primary/60 mb-6">Welcome</p>
+                  <h3 className="font-serif text-2xl text-foreground mb-4">You're inside the circle.</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    Your first archive entry will arrive shortly.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </div>

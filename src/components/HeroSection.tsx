@@ -18,23 +18,32 @@ export function HeroSection() {
         <div className="font-serif text-lg md:text-xl tracking-widest text-primary uppercase">
           STIICE
         </div>
-        <a 
-          href="#waitlist" 
+        <a
+          href="#waitlist"
           className="text-xs md:text-sm tracking-widest uppercase hover:text-primary transition-colors duration-500"
-          data-testid="link-waitlist-nav"
+          data-testid="link-join-nav"
         >
-          Join the Waitlist
+          Join The Circle
         </a>
       </header>
 
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8"
+        >
+          <p className="text-xs uppercase tracking-widest text-primary/50 mb-2">The Human Archive</p>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-8 leading-tight">
             Some human abilities<br className="hidden md:block" /> are disappearing.
           </h1>
         </motion.div>
@@ -42,23 +51,23 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-foreground/70 text-xl md:text-2xl mb-4 max-w-2xl font-serif font-light italic">
+          <p className="text-foreground/60 text-xl md:text-2xl mb-3 font-serif font-light italic">
             Not because they are useless.
           </p>
-          <p className="text-foreground/70 text-xl md:text-2xl mb-10 max-w-2xl font-serif font-light italic">
+          <p className="text-foreground/60 text-xl md:text-2xl mb-10 font-serif font-light italic">
             Because they are no longer rewarded.
           </p>
-          <p className="text-muted-foreground text-sm md:text-base mb-12 max-w-xl font-light tracking-wide leading-relaxed uppercase">
-            STIICE is building The Human Archive — a living collection of human abilities that appear to be fading in the digital age.
+          <p className="text-muted-foreground text-sm md:text-base mb-14 max-w-md mx-auto font-light tracking-wide leading-relaxed">
+            A private archive for the abilities we are forgetting in the digital age.
           </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.8 }}
+          transition={{ duration: 1.5, delay: 0.7 }}
           className="flex flex-col sm:flex-row gap-6 items-center"
         >
           <a
@@ -66,20 +75,20 @@ export function HeroSection() {
             className="px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 uppercase tracking-widest text-sm"
             data-testid="button-enter-archive"
           >
-            Enter the Archive
+            Enter The Archive
           </a>
           <a
             href="#waitlist"
-            className="px-8 py-4 border border-transparent text-foreground hover:text-primary transition-all duration-500 uppercase tracking-widest text-sm"
-            data-testid="button-join-waitlist-hero"
+            className="px-8 py-4 border border-transparent text-foreground/70 hover:text-primary transition-all duration-500 uppercase tracking-widest text-sm"
+            data-testid="button-join-circle"
           >
-            Join The Archive
+            Join The Circle
           </a>
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="relative z-10 pb-12 flex justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
