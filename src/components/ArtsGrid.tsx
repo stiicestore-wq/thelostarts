@@ -119,7 +119,8 @@ export function ArtsGrid() {
   return (
     <section id="archive" className="py-32 px-6 w-full max-w-7xl mx-auto">
       <div className="mb-20">
-        <p className="text-xs uppercase tracking-widest text-primary/60 mb-6">The Archive</p>
+        <p className="text-xs uppercase tracking-widest text-primary/40 mb-3">Presented by STIICE</p>
+        <p className="text-xs uppercase tracking-widest text-primary/60 mb-6">The Human Archive</p>
         <div className="w-8 h-[1px] bg-primary/40 mb-8" />
         <h2 className="font-serif text-3xl md:text-5xl text-foreground max-w-lg leading-tight">
           Twelve human abilities currently under observation.
