@@ -8,15 +8,15 @@ export function HeroSection() {
         <img
           src="/hero-archway.png"
           alt="Cinematic archway"
-          className="w-full h-full object-cover object-center opacity-40"
+          className="w-full h-full object-cover object-center opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/75 to-background" />
       </div>
 
       {/* Header */}
       <header className="relative z-10 w-full p-6 md:p-12 flex justify-between items-center">
         <div className="font-serif text-lg md:text-xl tracking-widest text-primary uppercase">
-          The Lost Arts
+          STIICE
         </div>
         <a 
           href="#waitlist" 
@@ -51,7 +51,7 @@ export function HeroSection() {
             Because they are no longer rewarded.
           </p>
           <p className="text-muted-foreground text-sm md:text-base mb-12 max-w-xl font-light tracking-wide leading-relaxed uppercase">
-            A modern archive documenting the human abilities being forgotten in the age of endless noise.
+            STIICE is building The Human Archive — a living collection of human abilities that appear to be fading in the digital age.
           </p>
         </motion.div>
 
@@ -73,7 +73,7 @@ export function HeroSection() {
             className="px-8 py-4 border border-transparent text-foreground hover:text-primary transition-all duration-500 uppercase tracking-widest text-sm"
             data-testid="button-join-waitlist-hero"
           >
-            Join the Waitlist
+            Join The Archive
           </a>
         </motion.div>
       </div>
